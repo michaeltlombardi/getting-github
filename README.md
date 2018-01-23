@@ -259,3 +259,27 @@ This way all of the changes you make will start from a known good state.
 
 **Note:** _The name of the branch can be anything you want._
 _It's best to be descriptive of the work you intend to do._
+
+### Make Changes to Working Branch
+Now that you have a working branch to use it is time to make some changes.
+For the purposes of this kata you'll need to add a subfolder to the `entries` folder.
+You should name this folder the same as your github account name.
+
+In my case, the folder is `michaeltlombardi`.
+
+You can do this however you like, but here's the code to create the folder from the terminal you're doing the rest of this kata in:
+
+```bash
+mkdir ./entries/username
+```
+
+**Note:** _Make sure you replace `username` with your actual username._
+_This will work whether you're on Linux, MacOs, or Windows._
+
+Once you've created the folder you'll need to add your journal entry into that folder.
+The name of the file should be `YYYY-MM-DD.md`, using today's date.
+For example, when setting up this project, I added the journal entry `2018-01-22.md`.
+
+Everyday you repeat this kata you'll be adding a new file to your folder.
+You can put whatever you like in the file, or nothing at all (I put silly messages in mine).
+Both options are perfectly fine.

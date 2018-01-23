@@ -182,12 +182,27 @@ Your branch is up to date with 'origin/master'.
 Then you'll use `git fetch upstream` to retrieve all of the changes and code updates that have been made to the project since the last time you ran this command.
 You may or may not get output from this command, depending on if anything changed in the upstream project.
 
+```text
+remote: Counting objects: 1, done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), done.
+From https://github.com/michaeltlombardi/getting-github
+ * [new branch]      add-sync-step -> upstream/add-sync-step
+   538632f..5e19386  master        -> upstream/master
+```
+
+**Note:** _This example was for retrieving changes from this project._
+_Projects will have different URLs, branches, and hashes._
+
+```
+
 After you've retrieved the updates to upstream you call `git rebase upstream/master` to add all of those updates to your local copy.
 
 The output should like this if it added changes from upstream:
 
 ```text
-
+First, rewinding head to replay your work on top of it...
+Fast-forwarded master to upstream/master.
 ```
 
 If your master branch is already up to date with the upstream project, you should see output like this:
@@ -202,8 +217,15 @@ This can be helpful if you've done something to change where your master branch 
 If you are pushing changes after syncing from upstream your output should look like this:
 
 ```text
-
+Counting objects: 1, done.
+Writing objects: 100% (1/1), 652 bytes | 652.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0)
+To https://github.com/michaeltlombardi/getting-github.git
+   538632f..5e19386  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
 ```
+
+**Note:** _As before, the details for the push will vary from project to project and depending on the changes being synced.
 
 If there was nothing to update, your output should look like this:
 

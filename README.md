@@ -22,6 +22,7 @@ In this exercise, we're going to do some one-time setup:
 
 The following steps will be performed every time we want to practice this workflow:
 
+0. Ensure your local clone is up to date with the upstream project
 1. Create a feature branch to track your changes
 2. Make your changes to the new branch
 3. Commit the changes to the branch
@@ -135,3 +136,80 @@ upstream        https://github.com/michaeltlombardi/getting-github (push)
 
 You've added the upstream project as a remote.
 This is the last of the one-time setup steps - the rest of these steps will be followed from now on whenever you're working on the project.
+
+### Sync with Upstream
+If you're performing this exercise for the first time immediately after doing the setup, this step isn't _strictly_ necesssary, but it is helpful to go through the process and it certainly won't hurt any.
+
+Before you make any changes to your project you want to ensure your local copy is up to date with the upstream project.
+You do this by performing the following steps:
+
+1. Make sure you've checked out the master branch locally
+2. Fetch all updates from the upstream project
+3. Update your local master branch with those changes, if any.
+4. Push your updated copy of master to your fork.
+
+For any project where `origin` is your fork on github and `upstream` is the project you're syncing to, the following code block will work:
+
+```bash
+git checkout master
+git fetch upstream
+git rebase upstream/master
+git push -u origin master
+```
+
+**Note:** _You'll want to run these commands one at a time, making sure each one passes without errors before you go onto the next one._
+_There are shortcuts and faster ways to do this, or to make it all work on oneline, but when you're practicing this kata it's important to do them one by one to become more familiar with the commands._
+
+Let's go through those commands one by one.
+
+First, you make sure you're on the master branch of your local copy by using the `git checkout master` command.
+This way you won't accidentally sync a working branch to upstream when you don't mean to.
+
+The output should look like this if you switch from a branch other than master:
+
+```text
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+```
+
+Or like this if you were already on master (it won't hurt to call checkout if you're already on that branch):
+
+```text
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+```
+
+Then you'll use `git fetch upstream` to retrieve all of the changes and code updates that have been made to the project since the last time you ran this command.
+You may or may not get output from this command, depending on if anything changed in the upstream project.
+
+After you've retrieved the updates to upstream you call `git rebase upstream/master` to add all of those updates to your local copy.
+
+The output should like this if it added changes from upstream:
+
+```text
+
+```
+
+If your master branch is already up to date with the upstream project, you should see output like this:
+
+```text
+Current branch master is up to date.
+```
+
+Finally, you call `git push -u origin master` to push your changes to your fork on GitHub and make sure it's tracking your fork and not upstream.
+This can be helpful if you've done something to change where your master branch points for pushing and doesn't hurt if you're pointed correctly already.
+
+If you are pushing changes after syncing from upstream your output should look like this:
+
+```text
+
+```
+
+If there was nothing to update, your output should look like this:
+
+```text
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+Everything up-to-date
+```
+
+Once you've run these commands (assuming no errors!) you have successfully synced your fork to master.

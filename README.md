@@ -283,3 +283,67 @@ For example, when setting up this project, I added the journal entry `2018-01-22
 Everyday you repeat this kata you'll be adding a new file to your folder.
 You can put whatever you like in the file, or nothing at all (I put silly messages in mine).
 Both options are perfectly fine.
+
+### Commit Your Changes
+Just saving your work on your computer while on your working branch isn't enough to get that work into version control.
+We can verify that by checking the status:
+
+```bash
+git status
+```
+
+You should see output like this, but with your username instead of `username`:
+
+```text
+On branch add_daily_entry
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        entries/username/
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+Git errs on the side of caution and won't automatically include the changes you make unless you tell it to.
+You can make sure that git tracks your changes by using the following command:
+
+```bash
+git add entries/username
+```
+
+This won't produce any output but if we run `git status` again we'll get something like this:
+
+```text
+On branch add_daily_entry
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   entries/username/YYYY-MM-DD.md
+```
+
+**Note:** _The output should show your username and the current date if you created the folder and journal entry files as instructed above._
+
+Now that the changes are being tracked you can commit them - that is, save them in git - after which you can retrieve your work even if the files are deleted or changed in the meantime, so long as the git repository itself isn't lost.
+Once you push these changes they'll survive even if you accidentally delete your entire local copy of the project.
+
+It's important to [write good commit messages](https://chris.beams.io/posts/git-commit/) for everyone who is working on the project and for those users who may have to go investigating the project to discover bugs and history.
+
+**Note:** _Commit messages are **not** a replacement for changelog entries - they're for maintainers first and users second, whereas changelogs' audience priorities are reversed._
+
+For this kata, it's okay to just include a simple commit message.
+The link above includes lots of good tips for writing excellent commit messages but that's slightly outside the scope of this kata.
+
+For this kata, the following is fine:
+
+```bash
+git commit -m 'Add daily journal for username'
+```
+
+You should get output like this:
+
+```text
+[add_daily_entry ab44aaf] Add daily journal for username
+ 1 file changed, 24 insertions(+)
+```
+
+**Note:** _The hash after `add_daily_entry` and the insertions count are probably different - that's normal and expected._

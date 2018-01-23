@@ -391,3 +391,74 @@ Now that your Pull Request is submitted, one of the maintainers will be along wi
 Good practice is to never merge a pull request without a review by a second person and to never merge your own changes.
 
 The maintainers will try to review and merge your code quickly, but please be patient.
+
+### Clean Local Repository
+Once your PR is merged into the upstream project you can delete your working branch.
+Normally, this isn't strictly necessary but it helps to declutter your local copy of the repository.
+However, in the case of this kata, you'll always be recreating the `add_daily_entry` branch each day if you follow the instructions exactly.
+You will _definitely_ get errors if you do not clean your fork between each repetition of the kata.
+
+First, we checkout master again (if you want to, now is a great time to [sync your fork](#sync-with-upstream) since it puts you back on master anyway):
+
+```bash
+git checkout master
+```
+
+**REMINDER:** DO NOT PERFORM THESE STEPS UNITL **AFTER** YOUR PR IS MERGED!
+THIS WILL DELETE YOUR COPY OF THE WORKING BRANCH BOTH LOCALLY AND FROM GITHUB!
+
+First, delete the branch on your fork in GitHub:
+
+```bash
+git push -d origin add_daily_entry
+```
+
+You should get output like this:
+
+```text
+To https://github.com/username/getting-github.git
+ - [deleted]         add_daily_entry
+```
+
+After that, it's time to delete your local branch:
+
+```bash
+git branch -d add_daily_entry
+```
+
+You should then get output like this:
+
+```text
+Deleted branch add_daily_entry (was ab44aaf).
+```
+
+Once the branches are deleted you need to run a command to prune the stale references from git:
+
+```bash
+git remote prune origin
+```
+You should get output like this:
+
+```text
+Pruning origin
+URL: https://github.com/username/getting-github.git
+ * [pruned] origin/add_daily_entry
+```
+
+You can verify that the branches were deleted by checking your branches:
+
+```bash
+git fetch origin
+git branch -a
+```
+
+This should give you output like the following:
+
+```text
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+  remotes/upstream/master
+```
+
+If there is no `add_daily_entry` branch listed in your origin then you have successfully cleaned up your working branch and finished an iteration of this kata.

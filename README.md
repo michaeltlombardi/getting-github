@@ -347,3 +347,29 @@ You should get output like this:
 ```
 
 **Note:** _The hash after `add_daily_entry` and the insertions count are probably different - that's normal and expected._
+
+### Push Changes to Your Fork
+Now that you have committed your changes locally you can push them to your fork of the project.
+This makes your changes visible and available to other maintainers and allows you to submit a Pull Request to get your changes into the upstream project.
+
+But first, you need to actually push your changes.
+
+```bash
+git push -u origin add_daily_entry
+```
+
+**Note:** _You may notice this is the same command we used to push the synced updates to our fork's master branch - the difference is that we're on our working branch and pushing that branch up to our fork._
+
+You should get output that looks like this (the details may vary slightly):
+
+```text
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.58 KiB | 1.58 MiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/username/getting-github.git
+ * [new branch]      add_daily_entry -> add_daily_entry
+Branch 'add_daily_entry' set up to track remote branch 'add_daily_entry' from 'origin'.
+```

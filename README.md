@@ -235,3 +235,27 @@ Everything up-to-date
 ```
 
 Once you've run these commands (assuming no errors!) you have successfully synced your fork to master.
+
+### Checkout New Working Branch
+You should always work on a branch _other than_ master for [lots](http://waterstreetgm.org/git-why-you-should-never-commit-directly-to-master/) [of](https://softwareengineering.stackexchange.com/questions/335654/git-what-issues-arise-from-working-directly-on-master) [reasons](http://www.yegor256.com/2014/07/21/read-only-master-branch.html) which all add up to making working with other people on projects easier and safer.
+
+If you've [synced your local copy and fork with upstream](#sync-with-upstream) you should already have the master branch checked out locally.
+If not, go ahead and sync before you continue.
+
+Once you have master checked out locally you'll want to create a new branch based off of it.
+
+```bash
+git checkout -b add_daily_entry
+```
+
+The example above would give the following output:
+
+```text
+Switched to a new branch 'add_daily_entry'
+```
+
+The command created a new branch, `add_daily_entry`, which matches the updated master branch.
+This way all of the changes you make will start from a known good state.
+
+**Note:** _The name of the branch can be anything you want._
+_It's best to be descriptive of the work you intend to do._

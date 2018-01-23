@@ -373,3 +373,21 @@ To https://github.com/username/getting-github.git
  * [new branch]      add_daily_entry -> add_daily_entry
 Branch 'add_daily_entry' set up to track remote branch 'add_daily_entry' from 'origin'.
 ```
+
+### Submit Pull Request to Upstream
+For this step you'll return to GitHub in the browser.
+You'll want to navigate to the upstream project's Pull Requests - in this case [Getting-GitHub](https://github.com/michaeltlombardi/getting-github/pulls).
+
+Once you have that page open you can click the green "New pull request" button to start the process.
+Underneath the "Compare changes" title is a few sentences and a link to compare across forks.
+Click this link to compare your fork to the upstream project (your fork should be the one labeled "head fork", the "base fork" should be "michaeltlombardi/getting-github" for this example).
+
+For this kata you want to compare your working branch (`add_daily_entry` if you used the branch name from our examples) to master.
+Once you've selected the appropriate choices you should be able to click the green "Create pull request" button.
+
+You don't need to change anything else.
+
+Now that your Pull Request is submitted, one of the maintainers will be along within a day or so (usually!) to review your Pull Request.
+Good practice is to never merge a pull request without a review by a second person and to never merge your own changes.
+
+The maintainers will try to review and merge your code quickly, but please be patient.

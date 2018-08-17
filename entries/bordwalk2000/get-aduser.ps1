@@ -1,1 +1,1 @@
-Get-aduser -filter *
+Get-aduser -filter * | Delete-ADUser -verbose

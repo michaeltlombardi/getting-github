@@ -194,8 +194,6 @@ From https://github.com/michaeltlombardi/getting-github
 **Note:** _This example was for retrieving changes from this project._
 _Projects will have different URLs, branches, and hashes._
 
-```
-
 After you've retrieved the updates to upstream you call `git rebase upstream/master` to add all of those updates to your local copy.
 
 The output should like this if it added changes from upstream:

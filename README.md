@@ -22,7 +22,7 @@ In this exercise, we're going to do some one-time setup:
 2. Clone your fork of the repository to your local system
 3. Add a git remote branch for the upstream project
 
-The following steps will be performed every time we want to practice this workflow:
+The following steps will be [performed every time](#daily-steps) we want to practice this workflow:
 
 0. Ensure your local clone is up to date with the upstream project
 1. Create a feature branch to track your changes

@@ -92,8 +92,8 @@ git status
 You should see output like this:
 
 ```text
-On branch master
-Your branch is up to date with 'origin/master'.
+On branch main
+Your branch is up to date with 'origin/main'.
 ```
 
 All going well, you should now have a full local copy of the project.
@@ -143,18 +143,18 @@ If you're performing this exercise for the first time immediately after doing th
 Before you make any changes to your project you want to ensure your local copy is up to date with the upstream project.
 You do this by performing the following steps:
 
-1. Make sure you've checked out the master branch locally
+1. Make sure you've checked out the main branch locally
 2. Fetch all updates from the upstream project
-3. Update your local master branch with those changes, if any.
-4. Push your updated copy of master to your fork.
+3. Update your local main branch with those changes, if any.
+4. Push your updated copy of main to your fork.
 
 For any project where `origin` is your fork on github and `upstream` is the project you're syncing to, the following code block will work:
 
 ```bash
-git checkout master
+git checkout main
 git fetch upstream
-git rebase upstream/master
-git push -u origin master
+git rebase upstream/main
+git push -u origin main
 ```
 
 **Note:** _You'll want to run these commands one at a time, making sure each one passes without errors before you go onto the next one._
@@ -162,21 +162,21 @@ _There are shortcuts and faster ways to do this, or to make it all work on oneli
 
 Let's go through those commands one by one.
 
-First, you make sure you're on the master branch of your local copy by using the `git checkout master` command.
+First, you make sure you're on the main branch of your local copy by using the `git checkout main` command.
 This way you won't accidentally sync a working branch to upstream when you don't mean to.
 
-The output should look like this if you switch from a branch other than master:
+The output should look like this if you switch from a branch other than main:
 
 ```text
-Switched to branch 'master'
-Your branch is up to date with 'origin/master'.
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
 ```
 
-Or like this if you were already on master (it won't hurt to call checkout if you're already on that branch):
+Or like this if you were already on main (it won't hurt to call checkout if you're already on that branch):
 
 ```text
-Already on 'master'
-Your branch is up to date with 'origin/master'.
+Already on 'main'
+Your branch is up to date with 'origin/main'.
 ```
 
 Then you'll use `git fetch upstream` to retrieve all of the changes and code updates that have been made to the project since the last time you ran this command.
@@ -188,29 +188,29 @@ remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
 Unpacking objects: 100% (1/1), done.
 From https://github.com/michaeltlombardi/getting-github
  * [new branch]      add-sync-step -> upstream/add-sync-step
-   538632f..5e19386  master        -> upstream/master
+   538632f..5e19386  main        -> upstream/main
 ```
 
 **Note:** _This example was for retrieving changes from this project._
 _Projects will have different URLs, branches, and hashes._
 
-After you've retrieved the updates to upstream you call `git rebase upstream/master` to add all of those updates to your local copy.
+After you've retrieved the updates to upstream you call `git rebase upstream/main` to add all of those updates to your local copy.
 
 The output should like this if it added changes from upstream:
 
 ```text
 First, rewinding head to replay your work on top of it...
-Fast-forwarded master to upstream/master.
+Fast-forwarded main to upstream/main.
 ```
 
-If your master branch is already up to date with the upstream project, you should see output like this:
+If your main branch is already up to date with the upstream project, you should see output like this:
 
 ```text
-Current branch master is up to date.
+Current branch main is up to date.
 ```
 
-Finally, you call `git push -u origin master` to push your changes to your fork on GitHub and make sure it's tracking your fork and not upstream.
-This can be helpful if you've done something to change where your master branch points for pushing and doesn't hurt if you're pointed correctly already.
+Finally, you call `git push -u origin main` to push your changes to your fork on GitHub and make sure it's tracking your fork and not upstream.
+This can be helpful if you've done something to change where your main branch points for pushing and doesn't hurt if you're pointed correctly already.
 
 If you are pushing changes after syncing from upstream your output should look like this:
 
@@ -219,8 +219,8 @@ Counting objects: 1, done.
 Writing objects: 100% (1/1), 652 bytes | 652.00 KiB/s, done.
 Total 1 (delta 0), reused 0 (delta 0)
 To https://github.com/michaeltlombardi/getting-github.git
-   538632f..5e19386  master -> master
-Branch 'master' set up to track remote branch 'master' from 'origin'.
+   538632f..5e19386  main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
 ```
 
 **Note:** _As before, the details for the push will vary from project to project and depending on the changes being synced.
@@ -228,19 +228,19 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 If there was nothing to update, your output should look like this:
 
 ```text
-Branch 'master' set up to track remote branch 'master' from 'origin'.
+Branch 'main' set up to track remote branch 'main' from 'origin'.
 Everything up-to-date
 ```
 
-Once you've run these commands (assuming no errors!) you have successfully synced your fork to master.
+Once you've run these commands (assuming no errors!) you have successfully synced your fork to main.
 
 ### Checkout New Working Branch
-You should always work on a branch _other than_ master for [lots](http://waterstreetgm.org/git-why-you-should-never-commit-directly-to-master/) [of](https://softwareengineering.stackexchange.com/questions/335654/git-what-issues-arise-from-working-directly-on-master) [reasons](http://www.yegor256.com/2014/07/21/read-only-master-branch.html) which all add up to making working with other people on projects easier and safer.
+You should always work on a branch _other than_ main for [lots](http://waterstreetgm.org/git-why-you-should-never-commit-directly-to-master/) [of](https://softwareengineering.stackexchange.com/questions/335654/git-what-issues-arise-from-working-directly-on-master) [reasons](http://www.yegor256.com/2014/07/21/read-only-master-branch.html) which all add up to making working with other people on projects easier and safer.
 
-If you've [synced your local copy and fork with upstream](#sync-with-upstream) you should already have the master branch checked out locally.
+If you've [synced your local copy and fork with upstream](#sync-with-upstream) you should already have the main branch checked out locally.
 If not, go ahead and sync before you continue.
 
-Once you have master checked out locally you'll want to create a new branch based off of it.
+Once you have main checked out locally you'll want to create a new branch based off of it.
 
 ```bash
 git checkout -b add_daily_entry
@@ -252,7 +252,7 @@ The example above would give the following output:
 Switched to a new branch 'add_daily_entry'
 ```
 
-The command created a new branch, `add_daily_entry`, which matches the updated master branch.
+The command created a new branch, `add_daily_entry`, which matches the updated main branch.
 This way all of the changes you make will start from a known good state.
 
 **Note:** _The name of the branch can be anything you want._
@@ -356,7 +356,7 @@ But first, you need to actually push your changes.
 git push -u origin add_daily_entry
 ```
 
-**Note:** _You may notice this is the same command we used to push the synced updates to our fork's master branch - the difference is that we're on our working branch and pushing that branch up to our fork._
+**Note:** _You may notice this is the same command we used to push the synced updates to our fork's main branch - the difference is that we're on our working branch and pushing that branch up to our fork._
 
 You should get output that looks like this (the details may vary slightly):
 
@@ -380,7 +380,7 @@ Once you have that page open you can click the green "New pull request" button t
 Underneath the "Compare changes" title is a few sentences and a link to compare across forks.
 Click this link to compare your fork to the upstream project (your fork should be the one labeled "head fork", the "base fork" should be "michaeltlombardi/getting-github" for this example).
 
-For this kata you want to compare your working branch (`add_daily_entry` if you used the branch name from our examples) to master.
+For this kata you want to compare your working branch (`add_daily_entry` if you used the branch name from our examples) to main.
 Once you've selected the appropriate choices you should be able to click the green "Create pull request" button.
 
 You don't need to change anything else.
@@ -396,10 +396,10 @@ Normally, this isn't strictly necessary but it helps to declutter your local cop
 However, in the case of this kata, you'll always be recreating the `add_daily_entry` branch each day if you follow the instructions exactly.
 You will _definitely_ get errors if you do not clean your fork between each repetition of the kata.
 
-First, we checkout master again (if you want to, now is a great time to [sync your fork](#sync-with-upstream) since it puts you back on master anyway):
+First, we checkout main again (if you want to, now is a great time to [sync your fork](#sync-with-upstream) since it puts you back on main anyway):
 
 ```bash
-git checkout master
+git checkout main
 ```
 
 **REMINDER:** DO NOT PERFORM THESE STEPS UNITL **AFTER** YOUR PR IS MERGED!
@@ -453,10 +453,10 @@ git branch -a
 This should give you output like the following:
 
 ```text
-* master
-  remotes/origin/HEAD -> origin/master
-  remotes/origin/master
-  remotes/upstream/master
+* main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+  remotes/upstream/main
 ```
 
 If there is no `add_daily_entry` branch listed in your origin then you have successfully cleaned up your working branch and finished an iteration of this kata.

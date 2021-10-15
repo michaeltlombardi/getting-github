@@ -1,4 +1,5 @@
 # Getting GitHub
+
 _Project for helping folks new to Git grasp the workflow._
 
 This project will help walk you the [fork-and-branch workflow](https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/) with git and GitHub.
@@ -14,6 +15,7 @@ For this exercise, you will need:
 + An editor of some sort to write text in - you can use whatever you like, but we recommend [Visual Studio Code](https://code.visualstudio.com/) (it's what all the images in this document are from) - you can [download and install it from here](https://code.visualstudio.com/download)
 
 ## Exercise Overview
+
 In this exercise, we're going to do some one-time setup:
 
 1. Fork this repository to your personal namespace
@@ -30,13 +32,17 @@ The following steps will be performed every time we want to practice this workfl
 5. Open a pull request from your new branch to the upstream repository
 6. Clean up after your pull request is merged
 
+## One Time Setup Steps
+
 ### Fork This Repository
+
 The first thing we're going to do is fork this repository.
 You will need to navigate [to this project's GitHub page](https://github.com/michaeltlombardi/getting-github) and click the "Fork" button in the top right corner.
 
 For more information on forking a repository on GitHub, see [GitHub's documentation](https://guides.github.com/activities/forking/).
 
 ### Clone Your Fork
+
 Now that you have forked a copy of the project you will need to clone it - that is, download a copy - to your computer.
 
 Helpfully, projects on GitHub include a green "Clone or download" button towards the top-right of the project page.
@@ -99,6 +105,7 @@ Your branch is up to date with 'origin/main'.
 All going well, you should now have a full local copy of the project.
 
 ### Add Upstream as a Remote
+
 When using the fork and branch workflow you will want to keep your fork up-to-date with the project's changes.
 To do so, you need to track those changes.
 We do this by adding the original project (known as the _upstream_ repository) to our list of remotes for our local fork.
@@ -137,7 +144,10 @@ upstream        https://github.com/michaeltlombardi/getting-github (push)
 You've added the upstream project as a remote.
 This is the last of the one-time setup steps - the rest of these steps will be followed from now on whenever you're working on the project.
 
+## Daily Steps
+
 ### Sync with Upstream
+
 If you're performing this exercise for the first time immediately after doing the setup, this step isn't _strictly_ necesssary, but it is helpful to go through the process and it certainly won't hurt any.
 
 Before you make any changes to your project you want to ensure your local copy is up to date with the upstream project.
@@ -235,6 +245,7 @@ Everything up-to-date
 Once you've run these commands (assuming no errors!) you have successfully synced your fork to main.
 
 ### Checkout New Working Branch
+
 You should always work on a branch _other than_ main for [lots](http://waterstreetgm.org/git-why-you-should-never-commit-directly-to-master/) [of](https://softwareengineering.stackexchange.com/questions/335654/git-what-issues-arise-from-working-directly-on-master) [reasons](http://www.yegor256.com/2014/07/21/read-only-master-branch.html) which all add up to making working with other people on projects easier and safer.
 
 If you've [synced your local copy and fork with upstream](#sync-with-upstream) you should already have the main branch checked out locally.
@@ -259,6 +270,7 @@ This way all of the changes you make will start from a known good state.
 _It's best to be descriptive of the work you intend to do._
 
 ### Make Changes to Working Branch
+
 Now that you have a working branch to use it is time to make some changes.
 For the purposes of this kata you'll need to add a subfolder to the `entries` folder.
 You should name this folder the same as your github account name.
@@ -283,6 +295,7 @@ You can put whatever you like in the file, or nothing at all (I put silly messag
 Both options are perfectly fine.
 
 ### Commit Your Changes
+
 Just saving your work on your computer while on your working branch isn't enough to get that work into version control.
 We can verify that by checking the status:
 
@@ -347,6 +360,7 @@ You should get output like this:
 **Note:** _The hash after `add_daily_entry` and the insertions count are probably different - that's normal and expected._
 
 ### Push Changes to Your Fork
+
 Now that you have committed your changes locally you can push them to your fork of the project.
 This makes your changes visible and available to other maintainers and allows you to submit a Pull Request to get your changes into the upstream project.
 
@@ -373,6 +387,7 @@ Branch 'add_daily_entry' set up to track remote branch 'add_daily_entry' from 'o
 ```
 
 ### Submit Pull Request to Upstream
+
 For this step you'll return to GitHub in the browser.
 You'll want to navigate to the upstream project's Pull Requests - in this case [Getting-GitHub](https://github.com/michaeltlombardi/getting-github/pulls).
 
@@ -391,6 +406,7 @@ Good practice is to never merge a pull request without a review by a second pers
 The maintainers will try to review and merge your code quickly, but please be patient.
 
 ### Clean Local Repository
+
 Once your PR is merged into the upstream project you can delete your working branch.
 Normally, this isn't strictly necessary but it helps to declutter your local copy of the repository.
 However, in the case of this kata, you'll always be recreating the `add_daily_entry` branch each day if you follow the instructions exactly.
@@ -435,6 +451,7 @@ Once the branches are deleted you need to run a command to prune the stale refer
 ```bash
 git remote prune origin
 ```
+
 You should get output like this:
 
 ```text
